@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>BLANKA</title>
+        <link href="/css/blanka_documentation_gui.css" type="text/css" rel="stylesheet"/>
+        <link href="/css/blanka_header.css" type="text/css" rel="stylesheet"/>
+        <link href="/css/blanka_documentation_sidebar.css" type="text/css" rel="stylesheet"/>
+    </head>
+	<body>
+        <header>
+            <nav>
+                <ul>
+                    <li style="float:left"><a href="/blanka/index.html">BLANKA</a></li>
+                    <li style="float:right;width:190px;text-align:center;border-left:1.5px solid rgb(249,246,249)"><a href="/index.html">Gordon's Website</a></li>
+                    <li style="float:right;width:235px;text-align:center;border-left:1.5px solid rgb(249,246,249);border-right:1.5px solid rgb(249,246,249)"><a href="https://www.sanchezlab.science/">Sanchez Lab Website</a></li>
+                    <li style="float:right;width:175px;text-align:center;border-left:1.5px solid rgb(249,246,249);border-right:1.5px solid rgb(249,246,249)"><a href="/blanka/documentation/index.html">Documentation</a></li>
+                    <li style="float:right;width:90px;text-align:center;border-right:1.5px solid rgb(249,246,249)"><a href="/blanka/index.html" class="current">About</a></li>
+                </ul>
+            </nav>
+            <div id="box">
+            </div>
+        </header>
+        <div id="sidebar">
+            <ul>
+                <li><a href="/blanka/documentation/index.html">Getting Started</a></li>
+                <li><a href="/blanka/documentation/installation/index.html">Installation</a></li>
+                <li><a href="/blanka/documentation/command_line/index.html">Run BLANKA on the Command Line</a></li>
+                <li><a href="/blanka/documentation/gui/index.html">Run BLANKA GUI</a></li>
+            </ul>
+        </div>
+        <article>
+            <h1>Run BLANKA GUI</h1>
+            <ol>
+                <li>Run <code>run_blanka_gui.bat</code> file to start BLANKA GUI.</li>
+                <img src="/images/gui_01.png" title="BLANKA GUI" alt="BLANKA GUI" align="center"/>
+                <li>Click on the <code>...</code> box next to the <code>Sample</code> or <code>Control</code> lines to select files/directories to be processed. If <code>Multiple Sample Files</code>/<code>Multiple Control Files</code> is unchecked, you will be prompted to select a single file. If <code>Multiple Sample Files</code>/<code>Multiple Control Files</code> is checked, you will be prompted to select a directory containing one or more files. Files that are not in <code>.mzXML</code> format will be converted to <code>.mzXML</code> format using MSConvert.</li>
+                <img src="/images/gui_02.png" title="BLANKA GUI" alt="BLANKA GUI" align="center"/>
+                <p></p>
+                <img src="/images/gui_03.png" title="BLANKA GUI" alt="BLANKA GUI" align="center"/>
+                <p></p>
+                <img src="/images/gui_04.png" title="BLANKA GUI" alt="BLANKA GUI" align="center"/>
+                <p></p>
+                <img src="/images/gui_05.png" title="BLANKA GUI" alt="BLANKA GUI" align="center"/>
+                <li>Choose the type of data (LCQ, QTOF, or MALDI-TOF dried droplet) that will be procesed under the <code>Experiment</code> dropdown menu</li>
+                <img src="/images/gui_06.png" title="BLANKA GUI" alt="BLANKA GUI" align="center"/>
+                <li>Change any other parameters relating to thresholds, tolerances, and any other parameters as desired. For a full description of all parameters, refer to the <a href="/blanka/documentation/command_line/index.html">arguments table</a>.</li>
+                <img src="/images/gui_07.png" title="BLANKA GUI" alt="BLANKA GUI" align="center"/>
+                <li>Click <code>Run</code> to start processing your data.</li>
+                <li>If any user specified parameters are invalid, a pop-up window will tell users which parameters have been entered incorrectly. Re-enter correct parameters and click <code>Run</code> again to start processing your data.</li>
+                <img src="/images/gui_08.png" title="BLANKA GUI" alt="BLANKA GUI" align="center"/>
+                <li>If the <code>Verbose</code> option was selected, a new window will appear with progress on data processing.</li>
+                <img src="/images/gui_09.png" title="BLANKA GUI" alt="BLANKA GUI" align="center"/>
+                <li>Once complete, a new window will pop up telling the user that BLANKA has completed processing.</li>
+                <img src="/images/gui_10.png" title="BLANKA GUI" alt="BLANKA GUI" align="center"/>
+                <li>Data will be found in the directory containing the original sample files or the user specified output directory.</li>
+                <img src="/images/gui_11.png" title="BLANKA GUI" alt="BLANKA GUI" align="center"/>
+            </ol>
+        </article>
+    </body>
+</html>

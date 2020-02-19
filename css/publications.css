@@ -1,0 +1,21 @@
+body {
+    font-family: "Lucida Sans Unicode";
+    background-color: rgb(47,49,54);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+a {
+    color: rgb(249,246,249);
+    text-decoration: none;
+}
+a.current {
+    text-decoration: underline;
+}
+article ol {
+    color: rgb(249,246,249);
+    margin: 5%;
+    padding: 8px;
+}
+article ol a {
+    text-decoration: underline;
+}
