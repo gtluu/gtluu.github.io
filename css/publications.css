@@ -16,6 +16,11 @@ article ol {
     margin: 5%;
     padding: 8px;
 }
+article ol li {
+    color: rgb(249,246,249);
+    font-size: 13pt;
+    margin-bottom: 2%;
+}
 article ol a {
     text-decoration: underline;
 }

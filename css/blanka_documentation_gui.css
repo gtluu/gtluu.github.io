@@ -29,3 +29,7 @@ article code {
     padding: 4px;
     border-radius: 5px;
 }
+article ol img{
+    margin: 0px auto;
+    max-width: 45%;
+}
