@@ -19,6 +19,9 @@ article ul {
     padding-left: 0;
     width: 100%;
 }
+article ul a {
+    text-decoration: underline;
+}
 footer {
     position: fixed;
     bottom: 5%;
