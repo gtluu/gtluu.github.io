@@ -5,27 +5,37 @@
         <link href="/css/header.css" type="text/css" rel="stylesheet"/>
     </head>
 	<body>
-        <textarea id="mz" rows="10"></textarea>
+        <textarea id="mz" rows="10">Add m/z values separated by line breaks.</textarea>
+        <br>
+        <input type="text" id="width" value="Add m/z width."/>
+        <br>
         <input type="button" id="download" value="Download AHK Script"/>
+        
         <script>
-            function download(text) {
+            function download(mz_values, width) {
+                var mz_values_split = mz_values.trim().split("\n");
+                var new_mz_string = mz_values_split.join(", ");
+                
+                var ahk_header = "#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases." + "\n" + "; #Warn  ; Enable warnings to assist with detecting common errors." + "\n" + "SendMode Input  ; Recommended for new scripts due to its superior speed and reliability." + "\n" + "SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory." + "\n\n"
+                var mz_and_width = "mz_array := [" + new_mz_string + "]" + "\n" + "width := " + width + "\n\n"
+                var f6_command = "F6::\nSend,{F7}\nFor index, mz in mz_array\n{\n\tSend,e\n\tSend,{Tab}\n\tSend,{Tab}\n\tSend,{Tab}\n\tSend,{Tab}\n\tSend,%mz%\n\tSend,{Tab}\n\tSend,{U+00B1}\n\tSend,%width%\n\tSend,{Enter}\n\tSend,{Tab}\n\tSend,{Tab}\n\tSend,{Tab}\n\tSend,{Tab}\n\tSend,{Tab}\n\tSend,{Tab}\n\tSend,{Tab}\n\tSend,{Tab}\n\tSend,{Tab}\n\tSend,{Tab}\n}\nSend,{Tab}\nSend,{Tab}\nSend,{Tab}\nSend,{Tab}\nSend,{Tab}\nSend,{Tab}\nSend,{Tab}\nSend,{Tab}\nSend,{Tab}\nSend,{Tab}\nSend,{Enter}\nReturn\n\n"
+                var pause = "Pause::Pause\nReturn"
+                var script = ahk_header + mz_and_width + f6_command + pause
+                
                 var element = document.createElement('a');
-                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+                element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(script));
                 var filename = "get_eic_hotkey_" + Date.now().toString() + ".ahk";
                 element.setAttribute("download", filename);
                 element.style.display = "none";
                 document.body.appendChild(element);
                 element.click();
                 document.body.removeChild(element);
-                alert(element.href);
-                alert(filename);
-                alerg(text);
             }
             
             document.getElementById("download").addEventListener("click", function() {
-                var text = document.getElementById("mz").value;
-                alert(text);
-                download(text);
+                var mz_values = document.getElementById("mz").value;
+                var width = document.getElementById("width").value;
+                download(mz_values, width);
             }, false);
         </script>
     </body>
