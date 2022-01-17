@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<title>Get EIC AutoHotKey Script for Bruker DataAnalysis</title>
+        <link href="/css/index.css" type="text/css" rel="stylesheet"/>
+        <link href="/css/header.css" type="text/css" rel="stylesheet"/>
+        <script>
+            function download(text) {
+                var element = document.createElement('a');
+                element.setAttribute('href', 'data:text/plain;charset=utf-8' + encodeURIComponent(text));
+                var filename = "get_eic_hotkey_" + Date.now().toString() + ".ahk";
+                element.setAttribute("download", filename);
+                element.style.display = "none"
+                document.body.appendChild(element);
+                element.click();
+                document.body.removeChild(element);
+            }
+            
+            document.getElementById("download").addEventListener("click", function() {
+                var text = document.getElementById("mz").value;
+                download(text)
+            }, false);
+        </script>
+    </head>
+	<body>
+        <textarea id="mz" rows="10">Add m/z values separated by line breaks.</textarea>
+        <input type="button" id="download" value="Download AHK Script"/>
+    </body>
+</html>
