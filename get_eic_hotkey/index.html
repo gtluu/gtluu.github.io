@@ -1,13 +1,40 @@
 <html>
 	<head>
 		<title>Get EIC AutoHotKey Script for Bruker DataAnalysis</title>
-        <link href="/css/index.css" type="text/css" rel="stylesheet"/>
+        <link href="/css/get_eic_hotkey.css" type="text/css" rel="stylesheet"/>
         <link href="/css/header.css" type="text/css" rel="stylesheet"/>
     </head>
 	<body>
-        <textarea id="mz" rows="10">Add m/z values separated by line breaks.</textarea>
+        <h1>Get EIC AutoHotKey Script for Bruker DataAnalysis</h1>
+        <h3>About</h3>
+        <p>This tool was developed in JavaScript to generate an AutoHotKey script that allows users to easily generate extracted ion chromatograms (EICs) from a list of <i>m/z</i> signals in Bruker's DataAnalysis software.</p>
+        <h3>How to Use</h3>
+        <ol>
+            <li>Make sure <a href="https://www.autohotkey.com/">AutoHotKey</a> is installed.</li>
+            <li>Enter as many <i>m/z</i> values as desired in the large text box below separated by line breaks.</li>
+            <li>Add the width (i.e. plusminus <i>m/z</i> tolerance) for the EICs to be generated.</li>
+            <li>Download the script using the "Download AHK Script" button.</li>
+            <li>Open the script with AutoHotKey.</li>
+            <li>In Bruker DataAnalysis, click on the data/run you would like to generate EICs for in the left column.</li>
+            <li>Press the F6 key to generate EICs for the <i>m/z</i> values that were entered plusminus the width (This may take a minute depending on how many values were entered).</li>
+        </ol>
+        
+        <script>
+            function clearContents(element) {
+                element.value = "";
+            }
+        </script>
+        
+        <h2><i>m/z</i> Values</h2>
+        <textarea id="mz" rows="10" onFocus="clearContents(this)">Add m/z values separated by line breaks.
+Example:
+211.5000
+269.1790
+609.2880</textarea>
         <br>
-        <input type="text" id="width" value="Add m/z width."/>
+        <h2>Width</h2>
+        <input type="text" id="width" value="Add m/z width." onFocus="clearContents(this)"/>
+        <br>
         <br>
         <input type="button" id="download" value="Download AHK Script"/>
         

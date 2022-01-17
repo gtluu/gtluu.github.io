@@ -1,0 +1,56 @@
+body {
+    font-family: "Lucida Sans Unicode";
+    background-color: rgb(47,49,54);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+a {
+    color: rgb(49,176,249);
+    text-decoration: none;
+}
+h1 {
+    color: rgb(249,246,249);
+}
+h2 {
+    color: rgb(249,246,249);
+}
+h3 {
+    color: rgb(249,246,249);
+}
+p {
+    color: rgb(249,246,249);
+}
+li {
+    color: rgb(249,246,249);
+}
+textarea {
+    font-family: "Lucida Sans Unicode";
+    width: 500px;
+}
+input {
+    font-family: "Lucida Sans Unicode";
+    width: 500px;
+}
+footer {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, 0%)
+}
+footer nav ul {
+    font-size: 16pt;
+    color: rgb(249,246,249);
+    list-style-type: none;
+    margin: 0;
+    padding: 8px;
+}
+footer nav ul a {
+    display: block;
+    margin: 0;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px
+}
